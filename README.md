@@ -9,3 +9,6 @@ But there is a point where you just can't parallelize (e.g. wine making - you ha
 point in the process)  
 #### Amdahl's Law  
 https://en.wikipedia.org/wiki/Amdahl%27s_law
+
+#### Joblib
+https://joblib.readthedocs.io/en/latest/

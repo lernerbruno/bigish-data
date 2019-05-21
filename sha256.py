@@ -28,8 +28,7 @@ def serial(signatures):
     for name, signature in signatures:
         sig = file_sha256(name)
         if sig != signature:
-            # print(name)
-            pass
+            print(name)
 
 
 def parallel(signatures, pool):
