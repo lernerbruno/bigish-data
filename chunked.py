@@ -18,12 +18,13 @@ dfs = pd.read_csv(csv_file, parse_dates=time_cols, chunksize=10_000)
 # Calculate the mean ride duration using the above iterator (mean of means)
 total_mean = pd.Timedelta(0)
 total_items = 0
+means = []
 for df in dfs:
     pickup_times = df['tpep_pickup_datetime']
     dropoff_times = df['tpep_dropoff_datetime']
     ride_time_mean = (dropoff_times - pickup_times).mean()
-    total_mean += ride_time_mean
-    total_items += 1
+    means.append(ride_time_mean)
 
-print(f'The average ride time is {total_mean/total_items}')
+mean = pd.Series(means).mean()
+print(f'The average ride time is {mean}')
 
