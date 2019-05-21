@@ -39,7 +39,7 @@ def parallel(signatures, pool):
             print(name)
 
 
-root_dir = 'taxi'
+root_dir = 'data/taxi'
 signatures = parse_signature_file(f'{root_dir}/sha256sum.txt')
 signatures = [(f'{root_dir}/{name}', sig) for name, sig in signatures]
 

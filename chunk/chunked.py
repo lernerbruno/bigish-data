@@ -2,14 +2,15 @@ import pandas as pd
 from pathlib import Path
 import bz2
 
-csv_file = 'yellow_tripdata_2018-05.csv.bz2'
+csv_file = 'data/yellow_tripdata_2018-05.csv.bz2'
 time_cols = ['tpep_pickup_datetime', 'tpep_dropoff_datetime']
+
 
 size = Path(csv_file).stat().st_size
 print(f'size = {size / (2 ** 20)} MB')
-# with bz2.open(csv_file, 'rt') as fp:
-#     for _ in range(5):
-#         print(fp.readline().strip())
+with bz2.open(csv_file, 'rt') as fp:
+    for _ in range(5):
+        print(fp.readline().strip())
 
 # Load only first 1000 rows for quick look at data
 # df = pd.read_csv(csv_file, parse_dates=time_cols, nrows=1000)
